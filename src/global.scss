@@ -1,0 +1,158 @@
+@import 'variables.scss';
+
+/*
+ * box model like it should be
+ *
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+ html { box-sizing: border-box; }
+ 
+ *,
+ *::before,
+ *::after {
+   box-sizing: inherit;
+ }
+ 
+ /*
+  * kill document defaults margin & padding. We all do that all the time, right ?
+  */
+ html,
+ body {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /*
+  * page styles
+  */
+ html {
+   min-height: 100%;
+   //background: $colorPrimary;
+   background: $colorWhite;
+ }
+ 
+ body {
+   color: $colorText;
+   font-size: 1rem;
+   line-height: 1.5rem;
+ 
+   /* system font https://medium.com/designing-medium/system-shock-6b1dc6d6596f */
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+ }
+
+ a {
+   color: inherit;
+   text-decoration: none;
+ 
+   &:hover {
+	 text-decoration: underline;
+   }
+ }
+ 
+ hr {
+   border: 0;
+   height: 1px;
+   background: $colorNeutral;
+   opacity: 0.2;
+   margin: 2rem 0;
+ }
+ 
+ blockquote, ol, p, ul {
+   margin: .25em auto .5em
+ }
+ 
+ p {
+   line-height: 1.5em
+ }
+ 
+ ol, ul {
+   padding-left: 1.5em;
+   margin-left: 1.5em
+ }
+ 
+ ul {
+   list-style: disc
+ }
+ 
+ ol {
+   list-style: decimal
+ }
+ 
+ li {
+   margin: .5em 0 0
+ }
+ 
+ blockquote {
+   position: relative;
+   background: $colorPrimaryDark;
+   color: $colorNeutralLight;
+   font-size: 1.25em;
+   padding: 2.75rem .75rem .75rem 2.75rem;
+   font-style: italic;
+   border-radius: 1rem;
+   &:before {
+	 position: absolute;
+	 content: '"';
+	 top: 2rem;
+	 left: 0;
+	 font-size: 5em;
+	 font-weight: bold;
+	 color: $colorPrimary;
+	}
+ }
+ 
+ blockquote p {
+   margin: .25em 0
+ }
+ 
+ blockquote a {
+   color: #FFF;
+   text-decoration: underline
+ }
+ 
+ blockquote a:hover {
+   text-decoration: none
+ }
+ 
+ img {
+   width: auto;
+   height: auto;
+   max-width: 100%
+ }
+ 
+ .img-wrap.aligncenter, .img-wrap.alignleft, .img-wrap.alignright {
+   text-align: center
+ }
+ 
+ .img-wrap.aligncenter img, .img-wrap.alignleft img, .img-wrap.alignright img {
+   border-radius: 10px
+ }
+ 
+ @media screen and (min-width: 448px ) {
+ 
+   .img-wrap.alignright {
+	 max-width: 40%;
+	 float: right;
+	 margin: .25em 0 .25em 1em;
+   }
+ 
+   .img-wrap.alignleft {
+	 max-width: 40%;
+	 float: left;
+	 margin: .25em 1em .25em 0;
+   }
+ 
+ }
+ 
+.img-wrap.aligncenter {
+	clear: both;
+	margin: .25em auto
+}
+
+img.no-shadow {
+	box-shadow: 0 0 0 rgba(0, 0, 0, .8)
+}
+
+img.no-radius {
+	border-radius: 0
+}

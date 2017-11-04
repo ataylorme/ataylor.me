@@ -1,0 +1,85 @@
+const _ = require("lodash")
+const Promise = require('bluebird')
+const path = require('path')
+
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+
+  return new Promise((resolve, reject) => {
+    const pageTemplate = path.resolve("./src/templates/page.js")
+    resolve(
+      graphql(
+        `
+          {
+            allMarkdownRemark(limit: 1000) {
+              edges {
+                node {
+                  frontmatter {
+                    path
+                  }
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+
+        // Create blog posts pages.
+        _.each(result.data.allMarkdownRemark.edges, edge => {
+          createPage({
+            path: edge.node.frontmatter.path,
+            component: pageTemplate,
+            context: {
+              path: edge.node.frontmatter.path,
+            },
+          })
+        })
+      })
+    )
+  })
+}
+
+  exports.createPosts = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+
+  return new Promise((resolve, reject) => {
+    const blogTemplate = path.resolve("./src/templates/blog-post.js")
+    resolve(
+      graphql(
+        `
+          {
+            allMarkdownRemark(limit: 1000) {
+              edges {
+                node {
+                  frontmatter {
+                    path
+                  }
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+
+        // Create blog posts pages.
+        _.each(result.data.allMarkdownRemark.edges, edge => {
+          createPage({
+            path: edge.node.frontmatter.path,
+            component: blogTemplate,
+            context: {
+              path: edge.node.frontmatter.path,
+            },
+          })
+        })
+      })
+    )
+  })
+}
