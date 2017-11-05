@@ -8,16 +8,16 @@ import { rhythm } from '../utils/typography'
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const pages = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <div>
         <Helmet title={siteTitle} />
-        {posts.map(post => {
-          if (post.node.frontmatter.path !== '/404/') {
-            const title = get(post, 'node.frontmatter.title') || post.node.path
+        {pages.map(page => {
+          if (page.node.frontmatter.path !== '/404/') {
+            const title = get(page, 'node.frontmatter.title') || page.node.path
             return (
-              <div key={post.node.frontmatter.path}>
+              <div key={page.node.frontmatter.path}>
                 <h3
                   style={{
                     marginBottom: rhythm(1 / 4),
@@ -25,13 +25,13 @@ class BlogIndex extends React.Component {
                 >
                   <Link
                     style={{ boxShadow: 'none' }}
-                    to={post.node.frontmatter.path}
+                    to={page.node.frontmatter.path}
                   >
                     {title}
                   </Link>
                 </h3>
-                <small>{post.node.frontmatter.date}</small>
-                <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+                <small>{page.node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: page.node.excerpt }} />
               </div>
             )
           }
@@ -44,13 +44,13 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query PageIndexQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { order: ASC }) {
+    allMarkdownRemark {
       edges {
         node {
           excerpt

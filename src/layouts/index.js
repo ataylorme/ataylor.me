@@ -10,7 +10,7 @@ require('../global.scss')
 
 class Template extends React.Component {
   render() {
-    const { location, children } = this.props
+	const { location, children } = this.props
     let header, aboutImage, bodyClass
 
     let rootPath = `/`

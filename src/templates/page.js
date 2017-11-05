@@ -4,53 +4,41 @@ import get from 'lodash/get'
 
 import { rhythm, scale } from '../utils/typography'
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-
-    return (
-      <div>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+export default function Template({data}){
+	const { markdownRemark: page } = data;
+	const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+	return (
+		<div>
+        <Helmet title={`${page.frontmatter.title} | ${siteTitle}`} />
+        <h1>{page.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: page.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-      </div>
-    )
-  }
+      </div>	
+	)
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    site {
+  query PagesByPath($path: String!) {
+	
+	site {
       siteMetadata {
         title
         author
       }
     }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      id
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-      }
+		html
+		frontmatter {
+		  title
+		  path
+		  slug
+		  hero
+		  hero_credit
+		}
     }
   }
 `
