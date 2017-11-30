@@ -6,7 +6,7 @@ import { rhythm, scale } from '../utils/typography'
 
 export default function Template({data}){
 	const { markdownRemark: page } = data;
-	const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+	const siteTitle = data.site.siteMetadata.title;
 	return (
 		<div>
         <Helmet title={`${page.frontmatter.title} | ${siteTitle}`} />
