@@ -10,7 +10,7 @@ if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
   rootPath = __PATH_PREFIX__ + `/`
 }
 
-const Header = () => (
+const Header = ({data}) => (
 	<header id='header'>
 		<nav id='nav'>
 		<div className={ 'navPart1' }>

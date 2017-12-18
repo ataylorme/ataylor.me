@@ -4,10 +4,10 @@ module.exports = {
     author: "Andrew Taylor",
   },
   plugins: [
-	{
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content`
+        path: `${__dirname}/src/content`,
       },
     },
     {
@@ -26,9 +26,9 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants",
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
         ],
       },
     },
@@ -43,30 +43,16 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-typography",
+      resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: "src/utils/typography",
+        pathToConfigModule: 'src/utils/typography',
       },
-	},
-	{
-		resolve: `gatsby-remark-prismjs`,
-		options: {
-		  // Class prefix for <pre> tags containing syntax highlighting;
-		  // defaults to 'language-' (eg <pre class="language-js">).
-		  // If your site loads Prism into the browser at runtime,
-		  // (eg for use with libraries like react-live),
-		  // you may use this to prevent Prism from re-processing syntax.
-		  // This is an uncommon use-case though;
-		  // If you're unsure, it's best to use the default value.
-		  classPrefix: 'language-',
-		},
 	},
 	{
 		resolve: `gatsby-plugin-sass`,
 		options: {
 		  precision: 8,
 		}
-	},
-	`gatsby-plugin-catch-links`,
+	}
   ],
 }

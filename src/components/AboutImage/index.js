@@ -25,7 +25,10 @@ query AboutImgQuery {
 `
 */
 
-export default ({ data }) => {
+export default (props) => {
+	if( props.path !== '/about/' ){
+		return null;
+	}
 	return (
 	<div className="alignright img-wrap">
 		<picture>

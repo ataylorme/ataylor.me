@@ -1,0 +1,19 @@
+.heroImg {
+    /* fallback, mainly visible when hero image is loading */
+    background-color: var(--colorPrimary);
+    /* fallback when there is no hero image */
+    background: radial-gradient(
+      ellipse at 50% 50%,
+      color(var(--colorPrimary) l(+ 10%)) 15%,
+      var(--colorPrimary) 70%
+    );
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroImg img{
+  height: 100%;
+}

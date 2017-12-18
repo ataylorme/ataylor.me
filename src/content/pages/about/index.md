@@ -1,6 +1,6 @@
 ---
 title: Hi, I'm Andrew
-path: '/about/'
+path: "/about/"
 slug: about
 hero: portland-or-sign.jpg
 hero_credit: https://unsplash.com/@zackspear

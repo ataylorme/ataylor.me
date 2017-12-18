@@ -1,0 +1,63 @@
+@import '../../variables.scss';
+
+#hero {
+	position: relative;  
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	  }	  
+
+	.title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		background: linear-gradient(
+		  to bottom,
+		  rgba($colorNeutralDark, 0.75),
+		  transparent
+		);
+		color: $colorNeutralLight;
+		text-shadow:
+		  0 0 10px $colorPrimaryDark,
+		  0 0 6px $colorNeutralDark,
+		  0 0 2px $colorNeutralDark;
+		letter-spacing: 1px;
+		line-height: 1.25em;
+
+		@media screen and (min-width: 601px ){
+			min-height: 350px;
+		}
+	}
+
+	.heroImg, .gatsby-image-outer-wrapper, .gatsby-image-wrapper {
+		/* fallback, mainly visible when hero image is loading */
+		background-color: $colorPrimary;
+		/* fallback when there is no hero image */
+		background: radial-gradient(
+		ellipse at 50% 50%,
+		color($colorPrimary l(+ 10%)) 15%,
+		$colorPrimary 70%
+		);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.heroImg img{
+	height: 100%;
+	}
+
+}
