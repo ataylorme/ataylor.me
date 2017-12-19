@@ -6,6 +6,9 @@ import Helmet from 'react-helmet'
 import { rhythm } from '../utils/typography'
 
 export default ({ data }) => {
+  if( data === undefined ){
+	  return null;
+  }
   const siteTitle = data.site.siteMetadata.title
   
   return (
@@ -49,6 +52,7 @@ query recentPostsQuery {
 		filter: {
 			fileAbsolutePath: {regex: "/src/content/post/"}
 		},
+		limit: 10,
 		 sort: {
 			 fields: [frontmatter___date], order: DESC}
 	) {

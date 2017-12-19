@@ -29,6 +29,8 @@ export default ({ data }) => {
 
 	if (path === rootPath) {
 		bodyClass = 'home'
+	} else if ( location.pathname.includes('blog') ) {
+		bodyClass = 'post'
 	} else {
 		bodyClass = 'page'
 	}
@@ -37,19 +39,24 @@ export default ({ data }) => {
 		let pageTitle = (<h1>{page.frontmatter.title}</h1>)
 	}
 
-	let dateDiv = ( date === null ) ? null : (<div className="date">{date}</div>);
+	let dateDiv = ( date === null ) ? null : (
+	<div className="date" style={{ 
+		marginBottom: rhythm(2 / 4) 
+		}}>
+		{date}
+	</div>
+);
 	console.log(dateDiv);
 	
 	return (
-		<div id='main'>
+		<div id='main' className={bodyClass}>
 			<Header />
 			<HeroImage image={heroImage} title={title} />
 			<Container
 			style={{
-			maxWidth: rhythm(24),
+			maxWidth: rhythm(30),
 			padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
 			}}
-			className={bodyClass}
 		>
 				<AboutImage path={path}  />
 				<div>
