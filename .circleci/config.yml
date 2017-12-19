@@ -1,0 +1,74 @@
+# https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
+defaults: &defaults
+  docker:
+    - image: ataylorme/docker-node-ataylor.me:latest
+  working_directory: ~/ataylor.me
+  environment:
+    #=========================================================================
+    # In addition to the environment variables defined in this file, also
+    # add the following variables in the CircleCI UI.
+    #
+    # See: https://circleci.com/docs/2.0/environment-variables/
+    #
+    # S3_ACCESS_KEY:  S3 access key, used for deployment
+    # S3_ACCESS_TOKEN:  S3 access token, used for deployment
+    #=========================================================================
+    TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+
+    # The variables below usually do not need to be modified.
+    TERM: dumb
+
+version: 2
+build:
+        <<: *defaults
+        steps:
+            - checkout
+
+            - restore_cache:
+                keys:
+                    - node-modules
+
+            - run:
+                name: build site with Gatsby
+                command: ./.circleci/build-gatsby.sh
+
+            - save_cache:
+                key: node-modules
+                paths:
+                    - $HOME/ataylor.me/node_modules
+
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - public
+    
+    deploy:
+        <<: *defaults
+        steps:
+            - checkout
+
+            - attach_workspace:
+                at: /tmp
+
+            - run:
+                name: make public directory
+                command: if [ ! -d public ]; then; mkdir ./public; fi
+
+            - run:
+                name: copy production files
+                command: rsync -vaz --exclude='.git' --exclude='node_modules' /tmp/public/* ./public
+
+            - run:
+                name: deploy to s3
+                command: ./.circleci/deploy-to-s3.sh
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      # Build production site with Gatsby
+      - build
+      # Deploy to s3
+      - deploy:
+            requires:
+                - build
