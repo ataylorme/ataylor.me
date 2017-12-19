@@ -29,7 +29,7 @@ export default ({ data }) => {
 
 	if (path === rootPath) {
 		bodyClass = 'home'
-	} else if ( location.pathname.includes('blog') ) {
+	} else if ( path.includes('blog') ) {
 		bodyClass = 'post'
 	} else {
 		bodyClass = 'page'

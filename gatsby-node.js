@@ -40,27 +40,25 @@ exports.createPages = ({
 				// Create blog posts and pages.
 				_.each(result.data.allMarkdownRemark.edges, edge => {
 					let currentTemplate = defaultTemplate;
-					let postPath = edge.node.frontmatter.path;
 					let heroImage = ( ({}).hasOwnProperty.call(edge.node.frontmatter, 'hero') ) ? edge.node.frontmatter.hero : null;
 
-					// Change template based on blog post or file
+					// Change template based on page or blog post
 					if (edge.node.fileAbsolutePath.includes('src/content/pages')) {
 						
 					}
 
-					// add blog to URI of blog posts
 					if (edge.node.fileAbsolutePath.includes('src/content/posts')) {
-						postPath = `/blog${edge.node.frontmatter.path}`;
+						
 						
 					}
 
-
+					// Append file path to hero image if there is one
 					if( heroImage !== null ){
 						heroImage = `images/heroes/${heroImage}`;
 					}
 
 					createPage({
-						path: postPath,
+						path: edge.node.frontmatter.path,
 						component: currentTemplate,
 						context: {
 							path: edge.node.frontmatter.path,

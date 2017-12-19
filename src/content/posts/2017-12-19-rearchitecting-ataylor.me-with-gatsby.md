@@ -1,7 +1,7 @@
 ---
 title: "Rearchitecting ataylor.me With Gatsby"
 date: "2017-12-19"
-path: "/rearchitecting-ataylor.me-with-gatsby/"
+path: "/blog/rearchitecting-ataylor.me-with-gatsby/"
 slug: rearchitecting-ataylor.me-with-gatsby
 hero: gatsby-visual-studio-code-screenshot-12-2017.png
 ---

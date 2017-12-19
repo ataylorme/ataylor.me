@@ -26,7 +26,7 @@ export default ({ data }) => {
                 >
                   <Link
                     style={{ boxShadow: 'none' }}
-                    to={`/blog${post.node.frontmatter.path}`}
+                    to={post.node.frontmatter.path}
                   >
                     {title}
                   </Link>
