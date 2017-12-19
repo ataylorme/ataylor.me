@@ -1,10 +1,11 @@
 import React, {Component, PropTypes} from 'react'
 import Link from 'gatsby-link'
 import { Container } from 'react-responsive-grid'
+
+import { rhythm, scale } from '../utils/typography'
 import Header from '../components/Header'
 import HeroImage from '../components/HeroImage'
 
-import { rhythm, scale } from '../utils/typography'
 require('prismjs/themes/prism-solarizedlight.css')
 require('../global.scss')
 

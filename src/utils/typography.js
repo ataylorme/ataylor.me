@@ -7,7 +7,8 @@ Wordpress2016.overrideThemeStyles = () => ({
   }
 })
 
-const typography = new Typography(Wordpress2016)
+// const typography = new Typography(Wordpress2016)
+const typography = new Typography()
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== 'production') {
