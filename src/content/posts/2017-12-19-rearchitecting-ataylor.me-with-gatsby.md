@@ -17,3 +17,5 @@ I pondered tweaking an existing static site generator to generate JSON, rather t
 Gatsby is a modern website generator based on the React with great docs, solid example, an very active main developer and a good community.
 
 It sounded like exactly what I was looking for, without any hacking. I downloaded Gatsby and was up and running with the starter theme quickly. I was able to write my own theme using React components and even learn some [GraphQL](http://graphql.org/) along the way. If you are looking for something similar give it a shot - I'm glad I did.
+
+If you're interested in viewing the source code for this site you can find it on GitHub at [ataylorme/ataylor.me](https://github.com/ataylorme/ataylor.me).
