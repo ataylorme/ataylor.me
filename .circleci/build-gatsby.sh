@@ -11,6 +11,7 @@ if [ ! -f ./package.json ]; then
 	exit 1
 fi
 
+echo -e "\nRunning npm install"
 npm install
 
 # Build site with gatsby
@@ -24,4 +25,5 @@ if [ ! -f ./gatsby-config.js ]; then
 	exit 1
 fi
 
+echo -e "\nRunning gatsby build --prefix-paths"
 gatsby build --prefix-paths
