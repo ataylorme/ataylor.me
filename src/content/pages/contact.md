@@ -1,7 +1,5 @@
 ---
 title: Get in Touch
-slug: contact
-path: "/contact/"
 hero: pen-and-paper.jpg
 hero_credit: https://unsplash.com/@alvaroserrano
 ---

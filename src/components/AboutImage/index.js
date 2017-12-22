@@ -1,6 +1,8 @@
 import React from "react"
 import Img from "gatsby-image"
 
+require('./index.scss')
+
 const aboutImg = require('./andrew-taylor-professional-headshot-square-04-2015.png');
 const aboutImg1024 = require('./andrew-taylor-professional-headshot-square-04-2015-1024x1024.png');
 const aboutImg825 = require('./andrew-taylor-professional-headshot-square-04-2015-825x825.png');

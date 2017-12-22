@@ -1,6 +1,8 @@
 import React from "react"
 import WufooForm from "react-wufoo-embed"
 
+require('./index.scss')
+
 export default (props) => {
 	if( props.path !== '/contact/' ){
 		return null;

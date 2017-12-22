@@ -1,13 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: "ataylor.me",
-    author: "Andrew Taylor",
+    title: 'ataylor.me',
+    author: 'Andrew Taylor',
+    description: 'The source code for ataylor.me.',
+    siteUrl: 'https://www.ataylor.me/',
   },
+  pathPrefix: '/ataylor.me',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/content`,
+        name: 'page',
       },
     },
     {
@@ -17,7 +21,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1920,
+              maxWidth: 2560,
             },
           },
           {
@@ -40,6 +44,7 @@ module.exports = {
         trackingId: `UA-38647104-1`,
       },
     },
+    `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
@@ -53,6 +58,6 @@ module.exports = {
 		options: {
 		  precision: 8,
 		}
-	}
+	},
   ],
 }

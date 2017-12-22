@@ -22,13 +22,19 @@ const Header = ({data}) => (
 			</Link>
 			<Link
 			className={ 'link' }
-			to={ '/about' }
+			to={ '/about/' }
 			>
 			About
 			</Link>
 			<Link
 			className={ 'link' }
-			to={ '/contact' }
+			to={ '/blog/' }
+			>
+			Blog
+			</Link>
+			<Link
+			className={ 'link' }
+			to={ '/contact/' }
 			>
 			Contact
 			</Link>
