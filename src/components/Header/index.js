@@ -15,26 +15,26 @@ const Header = ({data}) => (
 		<nav id='nav'>
 		<div className={ 'navPart1' }>
 			<Link
-			className={ 'link' }
-			to={ '/' }
+			className="link"
+			to="/"
 			>
 			Home
 			</Link>
 			<Link
-			className={ 'link' }
-			to={ '/about/' }
+			className="link"
+			to="/about/"
 			>
 			About
 			</Link>
 			<Link
-			className={ 'link' }
-			to={ '/blog/' }
+			className="link"
+			to="/blog/"
 			>
 			Blog
 			</Link>
 			<Link
-			className={ 'link' }
-			to={ '/contact/' }
+			className="link"
+			to="/contact/"
 			>
 			Contact
 			</Link>
@@ -42,8 +42,8 @@ const Header = ({data}) => (
 		<div className={ 'navPart2' }>
 			{
 			<a
-				href={ 'https://twitter.com/ataylorme' }
-				className={ 'link' }
+				href="https://twitter.com/ataylorme"
+				className="link"
 				target='_blank'
 			>
 			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'  width='100%' height='100%'>
@@ -54,8 +54,8 @@ const Header = ({data}) => (
 			}
 			{
 			<a
-				href={ 'https://github.com/ataylorme' }
-				className={ 'link' }
+				href="https://github.com/ataylorme"
+				className="link"
 				target='_blank'
 			>
 				<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='100%' height='100%'>
