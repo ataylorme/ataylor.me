@@ -25,5 +25,5 @@ if [ ! -f ./gatsby-config.js ]; then
 	exit 1
 fi
 
-echo -e "\nRunning gatsby build --prefix-paths"
-gatsby build --prefix-paths
+echo -e "\nRunning gatsby build"
+gatsby build

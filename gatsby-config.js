@@ -5,7 +5,7 @@ module.exports = {
     description: 'The source code for ataylor.me.',
     siteUrl: 'https://www.ataylor.me/',
   },
-  pathPrefix: '/ataylor.me',
+  pathPrefix: 'https://www.ataylor.me',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
