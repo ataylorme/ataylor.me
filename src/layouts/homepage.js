@@ -14,52 +14,49 @@ require('../global.scss')
 export default class HomePage extends React.Component {
   render() {
     const siteTitle = this.props.data.site.siteMetadata.title
-	const posts = this.props.data.allMarkdownRemark.edges
-	const { heroImage } = this.props.data
+    const posts = this.props.data.allMarkdownRemark.edges
+    const { heroImage } = this.props.data
 
     return (
-		<div id='main' className='home'>
-		<Header />
-		<HeroImage image={heroImage} title={siteTitle} />
-		<Container
-		  style={{
-		  maxWidth: rhythm(30),
-		  padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-		  }}
-	  >
-        <Helmet title={siteTitle} />
-		<h1 style={{ fontWeight: "normal" }}>Recent Posts</h1>
-		<hr style={{ marginBottom: rhythm(1) }} />
-        {posts.map(post => {
-			const path = post.node.fields.slug
-			const date = post.node.frontmatter.date
+      <div id="main" className="home">
+        <Header />
+        <HeroImage image={heroImage} title={siteTitle} />
+        <Container
+          style={{
+            maxWidth: rhythm(30),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+        >
+          <Helmet title={siteTitle} />
+          <h1 style={{ fontWeight: 'normal' }}>Recent Posts</h1>
+          <hr style={{ marginBottom: rhythm(1) }} />
+          {posts.map(post => {
+            const path = post.node.fields.slug
+            const date = post.node.frontmatter.date
             const title = post.node.frontmatter.title
-			
-			if (path === '/404/' || date === null) {
-				return null
-			}
-            
-			return (
+
+            if (path === '/404/' || date === null) {
+              return null
+            }
+
+            return (
               <div key={path}>
                 <h3
                   style={{
                     marginBottom: rhythm(1 / 4),
                   }}
                 >
-                  <Link
-                    style={{ boxShadow: 'none' }}
-                    to={path}
-                  >
+                  <Link style={{ boxShadow: 'none' }} to={path}>
                     {title}
                   </Link>
                 </h3>
                 <DateDisplay date={date} />
                 <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
-				<hr style={{ marginBottom: rhythm(1) }} />
+                <hr style={{ marginBottom: rhythm(1) }} />
               </div>
             )
-        })}
-		</Container>
+          })}
+        </Container>
       </div>
     )
   }
@@ -73,13 +70,10 @@ export const HomePageQuery = graphql`
       }
     }
     allMarkdownRemark(
-		filter: {
-			fileAbsolutePath: {regex: "/src/content/post/"}
-		},
-		limit: 10,
-		 sort: {
-			 fields: [frontmatter___date], order: DESC}
-	) {
+      filter: { fileAbsolutePath: { regex: "/src/content/post/" } }
+      limit: 10
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt
@@ -92,13 +86,15 @@ export const HomePageQuery = graphql`
           }
         }
       }
-	}
-	heroImage: file(relativePath: { eq: "images/heroes/salt-creek-falls.jpg" }) {
-		childImageSharp {
-		  sizes(maxHeight: 350) {
-			...GatsbyImageSharpSizes_withWebp_tracedSVG
-		  }
-		}
-	}
+    }
+    heroImage: file(
+      relativePath: { eq: "images/heroes/salt-creek-falls.jpg" }
+    ) {
+      childImageSharp {
+        sizes(maxHeight: 350) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+        }
+      }
+    }
   }
 `

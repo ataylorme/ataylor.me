@@ -5,6 +5,7 @@ hero_credit: https://unsplash.com/@zackspear
 ---
 
 ## I am...
+
 * an Oregon native and Pacific Northwest fanatic
 * an Agency and Community Engineer at [Pantheon](https://pantheon.io/)
 * a full-stack web engineer versed in WordPress, PHP, JavaScript, HTML, CSS and more

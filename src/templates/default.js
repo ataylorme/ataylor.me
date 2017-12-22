@@ -13,35 +13,36 @@ import { rhythm, scale } from '../utils/typography'
 
 export default class DefaultTemplate extends React.Component {
   render() {
-	const { markdownRemark: post, heroImage } = this.props.data
+    const { markdownRemark: post, heroImage } = this.props.data
     const siteTitle = this.props.data.site.siteMetadata.title
-	const title = ( post.frontmatter.title !== null ) ? post.frontmatter.title : siteTitle
-	const path = post.fields.slug
-	const date = post.frontmatter.date
+    const title =
+      post.frontmatter.title !== null ? post.frontmatter.title : siteTitle
+    const path = post.fields.slug
+    const date = post.frontmatter.date
 
     return (
-		<div id='main'>
-			<Header />
-			<HeroImage image={heroImage} title={siteTitle} />
-			<Container
-				style={{
-				maxWidth: rhythm(30),
-				padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-				}}
-			>
-				<AboutImage path={path}  />
-				<Helmet title={title} />
-				<PageTitle title={title} hero={heroImage}  />
-				<DateDisplay date={date} />
-				<div dangerouslySetInnerHTML={{ __html: post.html }} />
-				<hr
-				style={{
-					marginBottom: rhythm(1),
-				}}
-				/>
-				<ContactForm path={path}  />
-			</Container>
-		</div>
+      <div id="main">
+        <Header />
+        <HeroImage image={heroImage} title={siteTitle} />
+        <Container
+          style={{
+            maxWidth: rhythm(30),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}
+        >
+          <AboutImage path={path} />
+          <Helmet title={title} />
+          <PageTitle title={title} hero={heroImage} />
+          <DateDisplay date={date} />
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <hr
+            style={{
+              marginBottom: rhythm(1),
+            }}
+          />
+          <ContactForm path={path} />
+        </Container>
+      </div>
     )
   }
 }
@@ -56,22 +57,22 @@ export const DefaultItemsBySlug = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-	  html
-	  fields {
-		slug
-	  }
+      html
+      fields {
+        slug
+      }
       frontmatter {
         title
-		date(formatString: "MMMM DD, YYYY")
-		hero
+        date(formatString: "MMMM DD, YYYY")
+        hero
       }
-	}
-	heroImage: file(relativePath: { eq: $hero }) {
-		childImageSharp {
-		  sizes(maxHeight: 350) {
-			...GatsbyImageSharpSizes_withWebp_tracedSVG
-		  }
-		}
-	}
+    }
+    heroImage: file(relativePath: { eq: $hero }) {
+      childImageSharp {
+        sizes(maxHeight: 350) {
+          ...GatsbyImageSharpSizes_withWebp_tracedSVG
+        }
+      }
+    }
   }
 `
