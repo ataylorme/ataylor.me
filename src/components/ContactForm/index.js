@@ -1,5 +1,6 @@
 import React from 'react'
 import WufooForm from 'react-wufoo-embed'
+import { rhythm } from '../../utils/typography'
 
 require('./index.scss')
 
@@ -9,6 +10,11 @@ export default props => {
   }
   return (
     <div>
+	<hr
+		style={{
+			marginBottom: rhythm(1),
+		}}
+		/>
       <WufooForm
         userName="andrewtaylor"
         formHash="zrn1v6d0ksmh80"
