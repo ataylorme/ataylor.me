@@ -24,24 +24,14 @@ export default class DefaultTemplate extends React.Component {
       <div id="main">
         <Header />
         <HeroImage image={heroImage} title={title} />
-        <Container
-          style={{
-            maxWidth: rhythm(30),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          <AboutImage path={path} />
-          <Helmet title={title} />
-          <PageTitle title={title} hero={heroImage} />
-          <DateDisplay date={date} />
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
-          <ContactForm path={path} />
-        </Container>
+        <div id="content">
+			<AboutImage path={path} />
+			<Helmet title={title} />
+			<PageTitle title={title} hero={heroImage} />
+			<DateDisplay date={date} />
+			<div dangerouslySetInnerHTML={{ __html: post.html }} />
+			<ContactForm path={path} />
+      	</div>
       </div>
     )
   }
