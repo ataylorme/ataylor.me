@@ -10,6 +10,9 @@ export default props => {
     return null
   }
 
+  // Strip the max width sizes as it was making the images grainy
+  delete image.childImageSharp.sizes.sizes;
+
   return (
     <div id="hero">
       <div className="title">
