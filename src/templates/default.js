@@ -16,14 +16,14 @@ export default class DefaultTemplate extends React.Component {
     const { markdownRemark: post, heroImage } = this.props.data
     const siteTitle = this.props.data.site.siteMetadata.title
     const title =
-      post.frontmatter.title !== null ? post.frontmatter.title : siteTitle
+	  post.frontmatter.title !== null ? post.frontmatter.title : siteTitle
     const path = post.fields.slug
     const date = post.frontmatter.date
 
     return (
       <div id="main">
         <Header />
-        <HeroImage image={heroImage} title={siteTitle} />
+        <HeroImage image={heroImage} title={title} />
         <Container
           style={{
             maxWidth: rhythm(30),
