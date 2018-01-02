@@ -33,6 +33,7 @@ const Header = ({ data }) => (
             href="https://twitter.com/ataylorme"
             className="link"
             target="_blank"
+            rel="noopener"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +51,7 @@ const Header = ({ data }) => (
             href="https://github.com/ataylorme"
             className="link"
             target="_blank"
+			rel="noopener"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
