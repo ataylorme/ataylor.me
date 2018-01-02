@@ -26,7 +26,7 @@ sync \
 --exclude='.DS_Store' \
 --exclude='CNAME' \
 --add-header="Cache-Control: max-age=31556926"  \
-public/static/ s3://media.ataylor.me/
+public/static/ s3://www.ataylor.me/static/
 
 # Upload site to S3
 echo -e "\n-> Uploading site, excluding media and CSS/JS, to S3..."
