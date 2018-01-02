@@ -9,10 +9,14 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	max-width: $maxWidth;
 	margin: 0 auto;
 	padding: 0;
 	line-height: 3rem;
+	max-width: 95vw;
+
+	@media screen and (min-width: 600px ) {
+		max-width: $maxWidth;
+	}
   
   
 	.navPart1,
