@@ -30,11 +30,10 @@
 		  0 0 2px $colorNeutralDark;
 		letter-spacing: 1px;
 		line-height: 1.25em;
-		max-width: 95vw;
 		padding: 1rem;
 
 		@media screen and (min-width: 601px ){
-			min-height: 350px;
+			min-height: 350px;;
 		}
 		
 		h1 {
