@@ -1,0 +1,14 @@
+---
+title: "First Impressions from Developing Gutenberg Blocks Discussion"
+date: "2018-01-16"
+hero: gutenberg-google-map-code-screenshot.png
+---
+For those of you that don't know, [Gutenberg](https://github.com/WordPress/gutenberg) is the project name for the re-imagining of the [WordPress](https://wordpress.org/) editorial experience.
+
+Previously, I talked about [what excites me about Gutenberg](https://www.ataylor.me/blog/2018-01-06-why-im-excited-about-gutenberg/). Since then I havve turned that excitement into action, doing a deeper dive and learning how to develop Gutenberg blocks over the last few weeks.
+
+During this experience I've beenc conecting with others in the community and having discussion around Gutenberg.
+
+Two of those folks, [Zac Gordon](http://zacgordon.com/) of [gutenberg.courses](https://gutenberg.courses/) and [Daniel Bachhuber](https://danielbachhuber.com/), and myself thought that others may benefit from this as well so we are going to live stream our discussion!
+
+The casual Gutenberg discussion will be 01/16/2018 about our first impressions developing for Gutenberg. If you would like to listen, and I hope that you do, you can [register here](https://attendee.gotowebinar.com/register/3464873788556844034).
