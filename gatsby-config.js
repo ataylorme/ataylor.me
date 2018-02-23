@@ -46,7 +46,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-feed`,
-    `gatsby-plugin-offline`,
+    { 
+      resolve: `gatsby-plugin-offline`, 
+      options: { 
+        navigateFallback: null, 
+        navigateFallbackWhitelist: [], 
+      }, 
+    }, 
+
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-typography',

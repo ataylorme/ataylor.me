@@ -1,0 +1,32 @@
+---
+title: "The Journey to Automated WordPress Updates"
+date: "2018-02-24"
+hero: loopconf-auto-update-workshop.jpg
+---
+I just finished attending my third [LoopConf](https://loopconf.com/) and I can't recommend it enough. It is an independent, developer-focused WordPress conference. I really enjoyed the single track focus and I was able to ~~network~~ nerd out with other advanced developers the entire time.
+
+This year Matt Cheney ([@populist](https://twitter.com/populist)) and I have a workshop on Automating WordPress Updates.
+
+[The final product](https://github.com/ataylorme/wordpress-at-scale-auto-update) took us over a year to achieve and was a series of progressive steps. In this blog post, I want to share with you that journey and how I went from manually updating and checking sites to having it be a fully automated process that is rarely thought about.
+
+This all started with [scalewp.io](https://scalewp.io/), a WordPress site I am responsible for keeping up to date. I was logging in to WordPress, checking for updates, creating a copy of the production site, applying the updates and then running a quick QA to make sure things haven't broken. This was a tedious process that took away from more important work I was also responsible for so I looked to automate this update process.
+
+I broke the problem down into two pieces: checking for and applying updates and checking that those updates didn't break the site. So I started a bash script that I could run locally. Checking for and applying updates was relatively easy using [wp-cli](https://wp-cli.org/).
+
+Next, I explored scripting the visual check. After trying quite a few different tools I landed on [BackstopJS](https://github.com/garris/BackstopJS), a [NodejS app](https://nodejs.org/) for visually comparing two sites. In my case, the copy of my site with WordPress updates applied compared to the production site.
+
+I also scripted creating the new environment and handling deployments if the tests pass. This script saved me about 30 minutes and it was something I could run every day. I would hop on in the morning, run the script, then go about my day.
+
+I didn't go straight to full automation and encourage you not to either. Start with what you are doing now. Be honest with yourself - are you fully testing every component of each site or just doing a quick visual spot check? I'll be the answer is a quick spot check. So script that spot check, run it for a few weeks and find the rough edges.
+
+Now that there is a solid foundation, move it to the cloud and automate the script running. I won't go into code details here but [I wrote about this first implementation running in CircleCI back in October 2016](https://pantheon.io/blog/automating-wordpress-core-and-plugin-updates-visual-regression-testing) if you want to read more.
+
+After that, I let it this script run automatically in the cloud for a few months. At one point I noticed the site was performing slowly. It turned out a plugin update had really decreased site speed even though visually things were exactly the same. It was time to iterate and improve the tests by also checking for performance. I settled on [Google's Lighthouse](https://developers.google.com/web/tools/lighthouse/), which audits sites for a variety of things, including performance. So now my script checks performance as well and if performance drops more than a few points updates don't get deployed.
+
+I kept talking about and sharing this script with others. Eventually, colleagues asked me to run the automated updates on some sites they are responsible for as well. At that point I worked on refactoring the script again, this time adding scalability to update and test multiple sites.
+
+Again, I this ran for a month or so before I came back to the script and added Behat testing to cover items visual regression and performance testing weren't.
+
+At this point, I am very confident that if all the tests pass updates can be deployed safely. So much so that I don't double check the results or really even think about the script unless a test fails and I need to debug things, which is very rare.
+
+I want to encourage you to work towards fully automating your updates as well but do so one step at a time. The final result took me well over a year to get right and isn't something you can do in a night or a weekend. I wrote [a little Node app](https://github.com/ataylorme/loopconf-2018-automated-update-workshop) for the LoopConf workshop that can be run locally to perform visual regression tests on a site. Start there by scripting your QA and keep iterating to get to full automation.
