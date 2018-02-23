@@ -1,11 +1,11 @@
 ---
 title: "The Journey to Automated WordPress Updates"
-date: "2018-02-24"
+date: "2018-02-23"
 hero: loopconf-auto-update-workshop.jpg
 ---
-I just finished attending my third [LoopConf](https://loopconf.com/) and I can't recommend it enough. It is an independent, developer-focused WordPress conference. I really enjoyed the single track focus and I was able to ~~network~~ nerd out with other advanced developers the entire time.
+I'm attending my third [LoopConf](https://loopconf.com/) and I can't recommend it enough. It is an independent, developer-focused WordPress conference. I really enjoyed the single track focus and I was able to ~~network~~ nerd out with other advanced developers the entire time.
 
-This year Matt Cheney ([@populist](https://twitter.com/populist)) and I have a workshop on Automating WordPress Updates.
+This year Matt Cheney ([@populist](https://twitter.com/populist)) and I did a workshop on Automating WordPress Updates.
 
 [The final product](https://github.com/ataylorme/wordpress-at-scale-auto-update) took us over a year to achieve and was a series of progressive steps. In this blog post, I want to share with you that journey and how I went from manually updating and checking sites to having it be a fully automated process that is rarely thought about.
 
