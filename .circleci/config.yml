@@ -1,4 +1,5 @@
 # https://circleci.com/docs/2.0/workflows/#using-workspaces-to-share-data-among-jobs
+
 defaults: &defaults
   docker:
     - image: ataylorme/docker-node-ataylor.me:latest
