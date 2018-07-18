@@ -1,0 +1,53 @@
+https://keybase.io/ataylorme
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.ataylor.me
+  * I am ataylorme (https://keybase.io/ataylorme) on keybase.
+  * I have a public key ASCKk31Y0ixruyL6tTEYLZytjyRP5h0QTauZubk1SBwfrQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01208a937d58d22c6bbb22fab531182d9cad8f244fe61d104dab99b9b935481c1fad0a",
+      "host": "keybase.io",
+      "kid": "01208a937d58d22c6bbb22fab531182d9cad8f244fe61d104dab99b9b935481c1fad0a",
+      "uid": "f0526a17cd5fb1cb156b0864631f7c19",
+      "username": "ataylorme"
+    },
+    "merkle_root": {
+      "ctime": 1531935710,
+      "hash": "7485bafc9d225fbde4807f625fec784dd59cfa8668c5c77a235e05798ff35f46dcea22dd54661d2263fd93ac0f82d1463c0e3fe894927da25c857ba2b2067a99",
+      "hash_meta": "a46cca7accea0da907cb4b91a757470ae8b761af9f25b1c908fbee13dfe5bb6f",
+      "seqno": 3286182
+    },
+    "service": {
+      "entropy": "yGJepCKB3c0DCGkJRnzqKKxs",
+      "hostname": "www.ataylor.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.3.0"
+  },
+  "ctime": 1531935720,
+  "expire_in": 504576000,
+  "prev": "6e1889fc5d95cbd5b646559821821eda4b57590f3e0a813fed90f05a120517a5",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgipN9WNIsa7si+rUxGC2crY8kT+YdEE2rmbm5NUgcH60Kp3BheWxvYWTESpcCDsQgbhiJ/F2Vy9W2RlWYIYIe2ktXWQ8+CoE/7ZDwWhIFF6XEIH8FmOZGfWMUsBnqU5l7cKSwls4Mggq1ZeKqDczfMhHFAgHCo3NpZ8RABN6kgvJFFRU0N4w8aoQKG7oOV58nIY5HIFxd4hZ40L7eLX7VhhkhII4C0vyD2bCwQ6MsSrz949B7mzKe7mI3DahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEICjXho9ClPcW1au2oR8iIQU//5NDbxNsvaNVkCcvV2nso3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ataylorme
