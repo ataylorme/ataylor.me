@@ -20,6 +20,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                hero
               }
               body
             }
@@ -38,6 +39,18 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
+      let heroImage = (({}).hasOwnProperty.call(post.node.frontmatter, 'hero')) ? post.node.frontmatter.hero : null
+      const path = post.node.fields.slug
+
+      // Do something to blog posts (but not the blog archive)
+			if( path.includes('/blog/') && path !== '/blog/' ){
+				// template = templates.post
+			}
+
+      // Append file path to hero image if there is one
+			if (heroImage !== null) {
+				heroImage = `images/heroes/${heroImage}`;
+			}
 
       createPage({
         path: post.node.fields.slug,
@@ -46,6 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
           slug: post.node.fields.slug,
           previous,
           next,
+          hero: heroImage,
         },
       })
     })
