@@ -6,7 +6,6 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import HeroImage from '../components/HeroImage'
-import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -14,29 +13,29 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const title = post.frontmatter.title !== null ? post.frontmatter.title : siteTitle
     const { previous, next } = this.props.pageContext
-    const { heroImage } = this.props.data
+    const heroImage = post.frontmatter.hero
 
     return (
       <React.Fragment>
         <HeroImage image={heroImage} title={title} />
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title={post.frontmatter.title} description={post.excerpt} />
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-              marginTop: rhythm(-1),
-            }}
-          >
+          {
+            !heroImage && (
+              <h1 className="text-5xl font-black mt-8 mb-0">
+                {title}
+              </h1>
+            )
+          }
+          <p className="text-sm leading-loose mb-8">
             {post.frontmatter.date}
           </p>
           <MDXRenderer>{post.body}</MDXRenderer>
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
+          <section
+            className="markdown"
+            dangerouslySetInnerHTML={{ __html: post.html }}
           />
+          <hr className="h-px mb-8" />
           <Bio />
 
           <ul
@@ -72,7 +71,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query($slug: String!, $hero: String) {
+  query($slug: String!) {
     site {
       siteMetadata {
         title
@@ -85,15 +84,15 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-      }
-      body
-    }
-    heroImage: file(relativePath: { eq: $hero }) {
-      childImageSharp {
-        fluid(maxHeight: 350) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        hero {
+          childImageSharp {
+            fluid(maxHeight: 350) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
         }
       }
+      body
     }
   }
 `

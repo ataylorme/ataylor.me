@@ -1,7 +1,7 @@
 ---
 title: Hello World
 date: '2015-05-01T22:12:03.284Z'
-hero: 'gatsby-visual-studio-code-screenshot-12-2017.png'
+hero: '../../assets/images/heroes/gatsby-visual-studio-code-screenshot-12-2017.png'
 ---
 
 This is my first post on my new fake blog! How exciting!

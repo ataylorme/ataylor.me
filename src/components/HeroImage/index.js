@@ -2,9 +2,9 @@ import React from 'react'
 import Img from 'gatsby-image'
 
 export default props => {
-  let { title, image } = props
+  const { title, image } = props
 
-  if (image === null || image === undefined) {
+  if (image === null) {
     return null
   }
 

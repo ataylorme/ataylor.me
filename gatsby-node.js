@@ -20,7 +20,9 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
-                hero
+                hero {
+                  relativePath
+                }
               }
               body
             }
@@ -39,17 +41,17 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-      let heroImage = (({}).hasOwnProperty.call(post.node.frontmatter, 'hero')) ? post.node.frontmatter.hero : null
+      let heroRelativePath = null,
+          heroId = null
+      if (({}).hasOwnProperty.call(post.node.frontmatter, 'hero')) {
+        heroRelativePath = post.node.frontmatter.hero.relativePath
+        heroId = post.node.frontmatter.hero.id
+      }
       const path = post.node.fields.slug
 
       // Do something to blog posts (but not the blog archive)
 			if( path.includes('/blog/') && path !== '/blog/' ){
 				// template = templates.post
-			}
-
-      // Append file path to hero image if there is one
-			if (heroImage !== null) {
-				heroImage = `images/heroes/${heroImage}`;
 			}
 
       createPage({
@@ -59,7 +61,8 @@ exports.createPages = ({ graphql, actions }) => {
           slug: post.node.fields.slug,
           previous,
           next,
-          hero: heroImage,
+          heroRelativePath: heroRelativePath,
+          heroId: heroId
         },
       })
     })
@@ -77,4 +80,17 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  createTypes(`
+    type Mdx implements Node {
+      frontmatter: MdxFrontmatter!
+    }
+    type MdxFrontmatter {
+      hero: File @fileByRelativePath
+    }
+  `)
 }
