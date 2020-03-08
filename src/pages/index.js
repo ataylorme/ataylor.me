@@ -5,6 +5,7 @@ import Image from 'gatsby-image'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import HeroImage from '../components/HeroImage'
+import Navigation from '../components/Navigation'
 
 export default class HomePage extends React.Component {
   render() {
@@ -19,6 +20,7 @@ export default class HomePage extends React.Component {
 
     return (
       <React.Fragment>
+        <Navigation />
         <HeroImage image={heroImage} title={siteTitle} />
         <SEO
           title={siteTitle}

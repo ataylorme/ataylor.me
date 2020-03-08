@@ -14,7 +14,7 @@ h5 {
   @apply text-lg;
 }
 h1,h2,h3,h4,h5 {
-  @apply mb-2;
+  @apply mb-2 leading-normal;
 }
 h2,h3,h4,h5 {
   @apply mt-2;
@@ -63,6 +63,7 @@ p {
 pre {
   @apply p-1;
 }
-a {
-  @apply text-blue-600;
+
+a::before, a::after {
+  @apply no-underline border-none;
 }

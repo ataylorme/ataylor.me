@@ -2,10 +2,10 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import HeroImage from '../components/HeroImage'
+import Navigation from '../components/Navigation'
 
 export default class defaultTemplate extends React.Component {
   render() {
@@ -17,6 +17,7 @@ export default class defaultTemplate extends React.Component {
 
     return (
       <React.Fragment>
+        <Navigation />
         <HeroImage image={heroImage} title={title} />
         <Layout location={this.props.location} title={title}>
           <SEO title={post.frontmatter.title} description={post.excerpt} />
@@ -36,7 +37,6 @@ export default class defaultTemplate extends React.Component {
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <hr className="h-px mb-8" />
-          <Bio />
 
           <ul
             style={{
