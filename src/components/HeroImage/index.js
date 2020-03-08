@@ -8,6 +8,9 @@ export default props => {
     return null
   }
 
+  // Strip the max width sizes as it was making the images grainy
+  delete image.childImageSharp.fluid.sizes
+
   return (
     <section className="relative flex items-center justify-center py-8 px-4 h-32 md:h-48 lg:h-64 text-center">
       <div className=" absolute inset-0 z-20 opacity-25 bg-black"></div>

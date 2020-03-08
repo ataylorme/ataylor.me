@@ -12,8 +12,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: `pages`,
       },
     },
     {
@@ -36,7 +43,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 2560,
             },
           },
           {
@@ -119,8 +126,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `ataylor.me`,
+        short_name: `ataylor.me`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
