@@ -20,7 +20,7 @@ const ImageGrid = ({ images }) => {
         }
         return (
           <React.Fragment key={i}>
-            <Img className="w-full block rounded-b" fluid={img.src.full.fluid} />
+            <Img className="w-full block rounded shadow-md" fluid={img.src.full.fluid} />
           </React.Fragment>
         )
       })}

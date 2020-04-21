@@ -26,7 +26,7 @@ const Gallery = ({ images }) => {
         return (
           <React.Fragment key={i}>
             <Img
-              className="w-full block"
+              className="w-full block rounded shadow-md"
               fluid={img.src.full.fluid}
             />
           </React.Fragment>

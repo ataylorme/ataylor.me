@@ -115,7 +115,10 @@ export const homePageQuery = graphql`
             title
             hero {
               childImageSharp {
-                fluid(maxWidth: 550) {
+                fluid(
+                  maxWidth: 550
+                  maxHeight: 250
+                  ) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }

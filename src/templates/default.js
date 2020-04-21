@@ -129,8 +129,8 @@ export const singleContentQuery = graphql`
             src {
               full: childImageSharp {
                 fluid(
-                  maxWidth: 1024
-                  maxHeight: 768
+                  maxWidth: 1200
+                  maxHeight: 1200
                   srcSetBreakpoints: [576, 768, 992, 1200]
                 ) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
