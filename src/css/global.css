@@ -37,7 +37,9 @@ h2,h3,h4,h5 {
   }
 }
 a {
-  @apply text-blue-600 underline;
+  @apply text-blue-600;
+  @apply underline;
+  @apply shadow-none;
 }
 ul, ol, blockquote, pre {
   @apply my-2;
@@ -57,13 +59,38 @@ ol {
 li {
   @apply mb-1;
 }
-p {
+article.post p {
   @apply leading-normal;
+  @apply py-1;
+  line-height: 1.5;
 }
 pre {
   @apply p-1;
 }
 
+.BrainhubCarousel__arrows {
+  background-color: #2b6cb0 !important;
+}
+
+.BrainhubCarousel__arrows:hover {
+  opacity: 0.75;
+}
+
 a::before, a::after {
-  @apply no-underline border-none;
+  @apply no-underline;
+  @apply border-none;
+}
+
+.image-grid {
+  @apply mx-auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+  @apply py-8;
+}
+
+@media screen and (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

@@ -5,10 +5,11 @@
   "version": "0.1.0",
   "author": "Andrew Taylor",
   "dependencies": {
+    "@brainhubeu/react-carousel": "^1.13.38",
     "@mdx-js/mdx": "^1.4.0",
     "@mdx-js/react": "^1.4.0",
     "@mdx-js/tag": "^0.20.3",
-    "gatsby": "^2.19.23",
+    "gatsby": "^2.20.26",
     "gatsby-image": "^2.0.22",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-manifest": "^2.0.5",
@@ -32,6 +33,7 @@
     "react-helmet": "^5.2.0",
     "react-live": "^2.2.0",
     "react-typography": "^0.16.13",
+    "tailwindcss": "^1.2.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "typography": "^0.16.17",
@@ -42,8 +44,7 @@
     "eslint": "^6.2.2",
     "eslint-plugin-react": "^7.11.1",
     "postcss-preset-env": "^6.7.0",
-    "prettier": "^1.14.2",
-    "tailwindcss": "^1.2.0"
+    "prettier": "^1.14.2"
   },
   "homepage": "https://github.com/ataylorme/ataylor.me-gatsby#readme",
   "main": "n/a",
