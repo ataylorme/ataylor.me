@@ -70,6 +70,12 @@ pre {
 
 .BrainhubCarousel__arrows {
   background-color: #2b6cb0 !important;
+  padding: 35px !important;
+}
+
+.BrainhubCarousel__arrows:disabled {
+  background-color: #CCCCCC !important;
+  cursor: not-allowed;
 }
 
 .BrainhubCarousel__arrows:hover {

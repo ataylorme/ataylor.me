@@ -15,14 +15,20 @@ const components = {}
 const DefaultTemplate = ({ data, pageContext, location }) => {
   const allComponents = useMemo(() => {
     const GalleryComponent = ({ id, type, ...props }) => {
-      const galleries = data.mdx.frontmatter.galleries.reduce(
+      const galleries = data.mdx.frontmatter.galleries
+      /**
+       * Create a new galleries sorted object using the IDs for
+       * keys and set the values to an array of image objects
+       */
+      const galleriesSorted = galleries.reduce(
         (acc, gallery) => {
           acc[gallery.id] = gallery.images
           return acc
         },
         {}
       )
-      return (type === "grid") ? <ImageGrid images={galleries[id]} {...props} /> : <Gallery images={galleries[id]} {...props} />
+      const galleryImages = galleriesSorted[id]
+      return (type === "grid") ? <ImageGrid images={galleryImages} {...props} /> : <Gallery images={galleryImages} {...props} />
     }
     return {
       ...components,
@@ -122,6 +128,7 @@ export const singleContentQuery = graphql`
               full: childImageSharp {
                 fluid(
                   maxWidth: 1024
+                  maxHeight: 768
                   srcSetBreakpoints: [576, 768, 992, 1200]
                 ) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG

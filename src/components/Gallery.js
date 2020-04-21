@@ -6,14 +6,13 @@ import '@brainhubeu/react-carousel/lib/style.css'
 const Gallery = ({ images }) => {
   return (
     <Carousel
-      infinite
       arrows
+      className="my-2"
     >
 
       {images.map((img, i) => {
         if (!img.src) {
           if (process.env.NODE_ENV !== 'production') {
-            // this gets removed in production, so don't worry
             console.error(`This image is missing "src", you probably messed up the path to it: ${img}`)
             return (
               <React.Fragment>
@@ -27,7 +26,7 @@ const Gallery = ({ images }) => {
         return (
           <React.Fragment key={i}>
             <Img
-              className="w-full max-w-2xl block rounded-b my-2"
+              className="w-full block"
               fluid={img.src.full.fluid}
             />
           </React.Fragment>
