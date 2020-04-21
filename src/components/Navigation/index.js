@@ -15,11 +15,13 @@ const Navigation = () => (
           About
       </Link>
       </div>
+      {/*
       <div className="p-1">
         <Link className="block text-white no-underline hover:underline opacity-75 hover:opacity-100 transition-opacity duration-300" to="/blog/">
           Blog
       </Link>
       </div>
+      */}
       <div className="p-1">
         <Link className="block text-white no-underline hover:underline opacity-75 hover:opacity-100 transition-opacity duration-300" to="/contact/">
           Contact

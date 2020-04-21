@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import HeroImage from '../components/HeroImage'
 import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 
 export default class HomePage extends React.Component {
   render() {
@@ -84,6 +85,7 @@ export default class HomePage extends React.Component {
             })}
           </div>
         </Layout>
+        <Footer />
       </React.Fragment>
     )
   }

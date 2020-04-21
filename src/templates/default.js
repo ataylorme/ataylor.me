@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import HeroImage from '../components/HeroImage'
 import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 import Gallery from '../components/Gallery'
 import ImageGrid from '../components/ImageGrid'
 
@@ -92,6 +93,7 @@ const DefaultTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </Layout>
+      <Footer />
     </React.Fragment>
   )
 }
