@@ -4,7 +4,6 @@ const ImageGrid = ({ images }) => {
   return (
     <div className="image-grid">
       {images.map((img, i) => {
-        console.log(img)
         if (!img.src) {
           if (process.env.NODE_ENV !== 'production') {
             // this gets removed in production, so don't worry

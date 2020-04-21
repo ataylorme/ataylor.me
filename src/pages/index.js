@@ -78,7 +78,7 @@ export default class HomePage extends React.Component {
               }
               const card = (imageLeft) ? (<React.Fragment>{heroCard}{textCard}</React.Fragment>) : (<React.Fragment>{textCard}{heroCard}</React.Fragment>)
               return (
-                <div key={slug} className="flex flex-wrap my-4 rounded overflow-hidden shadow-md" ke={slug}>
+                <div key={slug} className="flex flex-wrap my-4 rounded overflow-hidden shadow-md">
                   {card}
                 </div>
               )
