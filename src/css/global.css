@@ -94,3 +94,10 @@ a::before, a::after {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.gatsby-resp-image-figcaption {
+  color: #555d66;
+  font-size: 13px;
+  text-align: center;
+  @apply my-1;
+}

@@ -11,7 +11,6 @@ const Gallery = ({ images }) => {
     >
 
       {images.map((img, i) => {
-        console.log(img)
         if (!img.src) {
           if (process.env.NODE_ENV !== 'production') {
             // this gets removed in production, so don't worry
@@ -26,9 +25,9 @@ const Gallery = ({ images }) => {
           }
         }
         return (
-          <React.Fragment>
+          <React.Fragment key={i}>
             <Img
-              className="w-full block rounded-b m-2"
+              className="w-full max-w-2xl block rounded-b my-2"
               fluid={img.src.full.fluid}
             />
           </React.Fragment>

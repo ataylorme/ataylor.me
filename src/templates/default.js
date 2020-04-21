@@ -8,13 +8,13 @@ import SEO from '../components/seo'
 import HeroImage from '../components/HeroImage'
 import Navigation from '../components/Navigation'
 import Gallery from '../components/Gallery'
+import ImageGrid from '../components/ImageGrid'
 
 const components = {}
 
 const DefaultTemplate = ({ data, pageContext, location }) => {
-  console.log(data.mdx.frontmatter)
   const allComponents = useMemo(() => {
-    const GalleryComponent = ({ id, ...props }) => {
+    const GalleryComponent = ({ id, type, ...props }) => {
       const galleries = data.mdx.frontmatter.galleries.reduce(
         (acc, gallery) => {
           acc[gallery.id] = gallery.images
@@ -22,7 +22,7 @@ const DefaultTemplate = ({ data, pageContext, location }) => {
         },
         {}
       )
-      return <Gallery images={galleries[id]} {...props} />
+      return (type === "grid") ? <ImageGrid images={galleries[id]} {...props} /> : <Gallery images={galleries[id]} {...props} />
     }
     return {
       ...components,
