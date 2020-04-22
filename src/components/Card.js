@@ -11,7 +11,7 @@ const Card = ({ children, id, image, direction = "left" }) => {
     </div>
   )
   const heroCard = (
-    <div className="w-full md:w-1/2">
+    <div className="w-full md:w-1/2 order-first md:order-none">
       <Img
         className="w-full"
         fluid={image.childImageSharp.fluid}

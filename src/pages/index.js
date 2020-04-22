@@ -65,7 +65,7 @@ export default class HomePage extends React.Component {
                   </div>
                 )
                 heroCard = (
-                  <div className="w-full md:w-1/2">
+                  <div className="w-full md:w-1/2 order-first md:order-none">
                     <Image
                       className="w-full"
                       fluid={hero.childImageSharp.fluid}
