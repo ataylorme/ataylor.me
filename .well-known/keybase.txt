@@ -1,0 +1,89 @@
+==================================================================
+https://keybase.io/ataylorme
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ataylor.me
+  * I am ataylorme (https://keybase.io/ataylorme) on keybase.
+  * I have a public key with fingerprint 11C9 90D6 46EC 2146 28EC  922E AF0E 2494 5E15 3FEF
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01208a937d58d22c6bbb22fab531182d9cad8f244fe61d104dab99b9b935481c1fad0a",
+      "fingerprint": "11c990d646ec214628ec922eaf0e24945e153fef",
+      "host": "keybase.io",
+      "key_id": "af0e24945e153fef",
+      "kid": "0101b611205037402da3cb2b1af60b92a12c65ca43f9d847bdef9dc2a2a35d02a3ea0a",
+      "uid": "f0526a17cd5fb1cb156b0864631f7c19",
+      "username": "ataylorme"
+    },
+    "merkle_root": {
+      "ctime": 1587589124,
+      "hash_meta": "544d78d049ea6ff0f0225856276ed6d58b19583607950a8e0b5e3a683b1d8051",
+      "seqno": 16017774
+    },
+    "revoke": {
+      "sig_ids": [
+        "adccbbf15b1245c50111224e1d70f1df20727eeeb67b13457e6de5a9be43255d0f"
+      ]
+    },
+    "service": {
+      "hostname": "ataylor.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1587589126,
+  "expire_in": 157680000,
+  "prev": "bfed83a9998c3e20f033d18c10976bc6f546fe26a93d9db7c2824462e1857c99",
+  "seqno": 25,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMQAAnicbVQLbBRFGL7SglIFClhCECkspfTI0c7M7uyj8hBE5WEsKAJa6DmzM9su
+be/O2+tdrwUrUJCIoBFEEPEJbUHwFEoJhgIWFGwDihZQRAEDClUDKCS0iHWukRiN
+u8nuzOT7v/+b7/9nDvRIdCUnxHqmr8pPHXspobkxXOrKf+uDbhUS9bOolFMhFfHO
+Hy9m3Al5i2wm5UgAIqATQ9YY1hlCpkopRcgiFMsQ6ogZJmG6hRTF4ipkECiMUMOg
+4pWxokMTWoQBInkky/YV8GAgaPtCghZC0zAAUxWVmwgqKtK5aSDEiQU4UgwFc4hl
+i1sisNDvxCOEOEocnmX7xZqYeDvl/Q/+lm4AqQqFegxkTQGIEdmkiEJiqYAaiECx
+F2wSRbYMpisaZVwMTEQQkTED4stJp+7STjoLYKQSqJkMWxSaFGKVAl3Il6GlmdCI
+Ax0e9JESHlcVItFif1CM53ukEh4sKubeoN8firtrhuw4BmJdw7oBkSJ2SJxCbwkP
+ERGKFYVpOgOKwYlqWcACCGEdq0hTOVNFESg0sC6rQDMwIDoHFHOZqLpMIdMBhkKI
+w5/2+UUGFUBN0xQhIcjD/iIez+7YBcI4R8rJkwgzTUotiKkQgU0MoHALKRwyDViQ
+WQhoSOOcU1WjUFawxlXGMTEoV2SEhUeWNGd+PFswbJud5PFK/duBLDHxSIGgP+Q3
+/cVivTAUCjg5cVtC0UAcGOHU+zeFl9o+JrpERIR50LH9PrEJgfyvY6pH4mUBO8i9
+dhyBNVUH4onn4WFBSS3OdJkYhqGbMkfCQllmUDchMDSVmqqFFdXiopyGzAxGNRPp
+on9VxKGONdGW/1iIsNBJCgSn8M1HQqVBUdHGj2cnuRKSXd26dokfH1dy95Rbh6qp
+d4qroflle8PqJYdK327L/Wz+G61Td18fXnemV8w9qmnVsh676bvuqscrul94sKzf
+gOkFNwI3p/z0yYTG1jX7z+/dNOuiNfWhSQcTMu4PXF8dbt+wZ9Hg1JqVdem/rIts
+b5ixs7xocD/fuHXnhn+ROKZyyj3TstfN2XSXOzZswsHeWdtfmJHX0i6POdHl/aPR
+l2Y+se/s0ozK09cSqjvGjZ3es27yvt9euTe9bVfNkVrNtTO1phxM/DNpTejqQu+z
+5yfsv3xy4JHv7uzzzvLIff2PTszLQvOWOwOsP1Z3rBi94L3TW79uy114pOHA3evT
+GiPtydkxln7ow1hS+mNWn2/M2Edjbyt7LmfWM63u7Vcc75CtP9SlZFyu3NPSdLNy
+FVxQsLG8blDb65OiaWeqc3VtYPvetaN3Le0r9T1RvnFuWhp62BfNu1K4v9SZHNV/
+rR2RNHv93swbsNy+WsKrijcv/rRPx1b846hebt+p8bm1BTda11a1PHm2SY4MSjyX
+sONkj5H14vLJ3PaUp/7apW+3HU7MPhZ+JPdsxeHiBxRz4JmL81ac+n3LsOUHM7bM
+rfcd3xgqm/rmrgHVET0l+5QW+f5Vd3XN5103DPly1B0/e1e2pMo4raLhq/w1rzXf
+XjVi2jDPlcDQ5kj+8ZyZzzsvHtuMakcOYVM8dR0Z/S9mXlg28rqtd732aCwyPjrU
+7756M7Mpfcei+iWtReZfe4T83w==
+=Oo36
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ataylorme
+
+==================================================================
+
